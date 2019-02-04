@@ -1,1 +1,1 @@
-React-Native-Study-Project
+AwesomeProject
