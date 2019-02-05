@@ -1,6 +1,8 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {ImageCard} from "./ImageCard";
+import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ImageCard} from "./components/ImageCard";
+import {Header} from "./components/Header";
+import {w} from "./helpers/consts";
 
 export default class App extends React.Component {
   state = {
@@ -22,12 +24,10 @@ export default class App extends React.Component {
   };
 
   render() {
-    const {header, headerText, scrollView} = styles;
+    const {scrollView} = styles;
     return (
-        <View>
-          <View style={header}>
-            <Text style={headerText}>{this.state.headerTitle}</Text>
-          </View>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#fff', color: "#fff"}}>
+          <Header headerTitle={"СТЕЛИЧ"}/>
           <ScrollView>
             <View style={scrollView}>
               {
@@ -37,33 +37,18 @@ export default class App extends React.Component {
               }
             </View>
           </ScrollView>
-        </View>
+        </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#30d0fe",
-    height: 116,
-    justifyContent: 'center',
-    paddingLeft: 20,
-    paddingTop: 50,
-    shadowColor: "#000",
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.2,
-    elevation: 2,
-    position: "relative",
-  },
-  headerText:
-  {
-    color: "#fff",
-    fontSize: 28,
-  },
   scrollView: {
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    paddingVertical: 20,
+    width: w
   }
 });

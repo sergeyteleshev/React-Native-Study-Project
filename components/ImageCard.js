@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
-import {h, w} from "./consts";
+import {h, w} from "../helpers/consts";
 
 const ImageCard = ({data}) => {
     const {h1, view, img} = styles;
@@ -21,16 +21,15 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: 'center',
         width: w / 2.4,
+        marginTop: 10
     },
     view: {
         paddingVertical: 10,
-        marginTop: 0.05 * w,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
+        alignItems: 'center',
         shadowColor: "#000",
         shadowRadius: 8,
-        shadowOffset: {width: 0, height: 5},
-        shadowOpacity: 0.4,
+        shadowOffset: {width: 2, height: 20},
+        shadowOpacity: 1,
         width: w / 2.1,
     },
     img: {
